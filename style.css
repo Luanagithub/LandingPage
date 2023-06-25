@@ -1,0 +1,91 @@
+*{
+    font-family: 'Magic';
+    margin: 0%;
+    padding: 0%;
+    font-size: 20pt;
+}
+body{
+    margin: 0%;
+    max-width: fit-content;
+}
+#cards{
+    display: flex;
+    padding: 6%;
+    justify-content: center;
+    justify-content: space-around;
+}
+.card{
+    flex-grow: 1;
+}
+.card:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+.btn-color{
+    background-color: orange;
+}
+.header{
+    background-color: rgb(255, 166, 0);
+    mix-blend-mode: darken;
+}
+#navbarSupportedContent{
+}
+.nav-item:hover{
+    background-color: rgb(255, 255, 255);
+}
+.nav-link:hover{
+    color: rgb(255, 255, 255);
+}
+.navbar-nav .nav-link:hover {
+    color: brown;
+}
+div.list-group{
+    vertical-align: auto;
+}
+input{
+    text-align: center;
+}
+/* Letras brancas no nav-link */
+.navbar-nav .nav-link {
+    color: white;
+}
+.carousel-inner {
+    border-bottom: none;
+    
+    position: relative;
+    mix-blend-mode: darken;
+}
+.carousel-inner img{
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius:100%;
+    background-size: contain;
+
+    object-fit: contain;
+    position: relative;
+    mix-blend-mode: difference;
+
+    max-width: 100%;
+    min-width:80vw;
+    max-height:50vw;
+}
+form{
+    min-width: 60%;
+    max-width: 70%;
+}
+#sec3 button{
+    padding: 10%;
+}
+#section1{
+    background-image: url(Imagens/Changeable-side-pizza-box.jpg);;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 1327px) {
+    html{
+        border-top: 4vw solid white;
+        border-left: 24vw solid white;
+        border-right: 24vw solid white;
+        border-bottom: 12vw solid white;
+    }
+}

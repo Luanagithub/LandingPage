@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+<!--Colocar a CDN do js-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap.icons.css">
+<link rel="stylesheet" href="style.css">
+
+<!--link para o jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!--link-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+<script>
+    function validarInput(event) {
+    var input = event.target;
+    var valor = input.value;
+    
+    // Remove os caracteres não-alfabéticos usando uma expressão regular
+    var novoValor = valor.replace(/[^a-zA-Z]/g, '');
+    
+    // Atualiza o valor do campo de entrada apenas com os caracteres válidos
+    input.value = novoValor;
+    }
+
+    $(document).ready(function() {
+      // Seletor para o campo de telefone
+    var phoneInput = $('#typePhone');
+    
+      // Aplicar a formatação do telefone usando o plugin
+    phoneInput.mask('(00) 00000-0000');
+    });
+
+    $(document).ready(function() {
+        // Seletor para o campo de e-mail
+        var emailInput = $('#exampleFormControlInput1');
+
+        // Função para validar o e-mail
+        function validateEmail(email) {
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Função para exibir mensagem de erro
+        function showErrorMessage(message) {
+            $('#emailError').text(message);
+        }
+
+        // Função para limpar mensagem de erro
+        function clearErrorMessage() {
+            $('#emailError').text('');
+        }
+
+        // Evento de validação ao clicar fora do campo de e-mail
+        emailInput.on('blur', function() {
+            var email = $(this).val();
+            clearErrorMessage();
+            if (email === '') {
+                showErrorMessage('Please enter an email address.');
+            } else if (!validateEmail(email)) {
+                showErrorMessage('Please enter a valid email address.');
+            }
+        });
+    });
+</script>
+
+<!--FONTES-->
+<style>
+    @font-face{font-family: 'BRAZIE';
+    src: url('Fontes/brazie/BRAZIE.ttf') format('truetype');
+    /* Outras propriedades opcionais, como font-weight e font-style */}
+    
+    @font-face{font-family: 'Magic';
+    src: url('Fontes/magic_2/Magic.otf') format('truetype');
+    /* Outras propriedades opcionais, como font-weight e font-style */}
+    
+    @font-face{font-family: 'CHICKEN';
+    src: url('Fontes/chicken_pie/CHICKEN\ Pie.ttf') format('truetype');
+    /* Outras propriedades opcionais, como font-weight e font-style */}
+</style>
+
+<header class="m-0 p-0">
+    <div class="col-12 bg-warning row pt-0 ">
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary col-12">
+            <div class="container-fluid p-2 pt-0 mt-0 ps-0" style="flex-wrap: wrap;">
+            
+                <div class="p-4"><h2>Sobre o Restaurante</h2></div>
+
+            <div style="min-width: 20vw;" class="d-block ">
+                <button class="navbar-toggler" style="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" style="padding-left: 5vw;" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="" aria-current="page" href="#sec3">Sobre o Restaurante</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sec4">Eventos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#sec3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cardápio
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#sec3">Seg à sexta</a></li>
+                        <li><a class="dropdown-item" href="#sec3">Sáb e domingos</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#sec3">Feriados</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    
+                </div>
+                </div>
+            </nav>
+            </div>
+
+    </div>
+
+</header>
+
+<div>
+    <br>
+</div>
+
+<!--SESSÃO 1- FOTOS-->
+<section class="container" id="section1">
+    
+    <div id="carouselExampleIndicators" class="carousel slide p-4 pb-0 pt-0" data-bs-ride="carousel" data-bs-ride="true">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img src="Imagens/pizza-1344720_640.png"   class="d-block" alt="Pizza1">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="Imagens/pizza-2000615_640.jpg" class="d-block" alt="Pizza2">
+        </div>
+        <div class="carousel-item" >
+            <img src="Imagens/pizza-5179939_640.png" class="d-block" alt="Pizza3">
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</nav>
+<!--FECHAMENTO-->
+</section>
+
+<div>
+    <br>
+    <br>
+</div>
+
+<!--SESSÃO 2- CARDS-->
+
+<section class="container-fluid mt-0 mb-0 pb-0 border-bottom-0" style="background-color: white;">
+<!--FUNDO DOS CARDS-->
+    <div class="p-4 d-flex flex-wrap mb-0 pb-0 text-center" id="sec2" id="cards" style="background-color:rgb(180,180,180) ;border:10px solid rgb(178, 178, 178) ">
+
+        <h2 class="text-center text-white m-0 pt-2 w-100" style="border-bottom: 1px solid white; font-family: Magic;">Principais Escolhas</h2>
+
+        <div class="card p-2 mb-4 mt-4" style="width: 13rem;" id="img1">
+            <a href="#img1"><img src="Imagens/Mussarela.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body text-center">
+                <h5 class="card-title">Mussarela</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#img1" class="btn btn-color">Peça já!</a>
+            </div>
+        </div>
+    
+        <div class="card mb-4 mt-4" style="width: 13rem;" id="img2">
+            <a href="#img2"><img src="Imagens/Peperoni.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body text-center">
+                <h5 class="card-title">Peperoni</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#img2" class="btn btn-color">Peça já!</a>
+            </div>
+        </div>
+    
+        <div class="card mb-4 mt-4" style="width: 13rem;" id="img3">
+            <a href="#img3"><img src="Imagens/4Queijos.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body text-center">
+                <h5 class="card-title">Quatro-Queijos</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#img3" class="btn btn-color">Peça já!</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    <br>
+    <br>
+</div>
+<!--SESSÃO 3- MENU DE OPCOES-->
+<section class="container-fluid">
+<style>
+    @media(min-height:100px) and (max-height:300px){
+
+    }
+</style>
+    <div class="d-flex flex-wrap mb-0 pb-0 text-center" style= "background-color: rgb(136, 136, 136); border: 10px solid rgb(140, 140, 140);">
+
+        <div class="container pt-2">
+            <h2 class="text-center text-white pt-2" style="border-bottom: 1px solid white; font-family: Magic;" id="sec3">Nosso Cardápio</h2>
+        </div>
+    
+        <div class="row p-4">
+            <div class="list-group col-4 ">
+                <button type="button" button class="btn text-white" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"   class="list-group-item list-group-item-action ">Mussarela</button>
+    
+                <button type="button" button class="btn text-white" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"  class="list-group-item list-group-item-action">Peperoni</button>
+    
+                <button type="button" button class="btn text-white" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2"  class="list-group-item list-group-item-action">Quatro-Queijos</button>
+    
+                <button type="button" button class="btn text-white" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3"  class="list-group-item list-group-item-action">Margherita</button>
+            </div>
+    
+            <div class="list-group col-8">
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        Feita com queijo mussarela derretido, molho de tomate tradicional e massa crocante.Está disponível nos tamanhos pequeno, médio e grande. Você pode escolher o tipo de borda que desejar.
+                    </div>
+                </div>
+    
+                <div class="collapse" id="collapseExample1">
+                    <div class="card card-body">
+                        Essa pizza tem fatias finas de pepperoni, um tipo de embutido de carne levemente picante, em cima da mussarela derretida e do molho de tomate.Está disponível nos tamanhos pequeno, médio e grande. Você pode escolher o tipo de borda que preferir.
+                    </div>
+                </div>
+    
+                <div class="collapse" id="collapseExample2">
+                    <div class="card card-body">
+                        Essa pizza é feita com uma combinação de quatro queijos: mussarela, gorgonzola, provolone e parmesão. Ela possui molho branco ou de tomate, e sua massa é crocante. Assim como as outras pizzas.Está disponível nos tamanhos pequeno, médio e grande. Você pode escolher o tipo de borda que mais gostar.
+                    </div>
+                </div>
+    
+                <div class="collapse" id="collapseExample3">
+                    <div class="card card-body">
+                        A pizza Margherita é uma das pizzas clássicas e mais simples da culinária italiana. Ela é feita com uma base de massa fina e crocante, coberta com um molho de tomate tradicional, fatias de queijo mussarela derretido e folhas frescas de manjericão.
+                    </div>
+                </div>
+    </div>
+    
+            </div>
+        </div>
+</section>
+<!--FECHAMENTO-->
+<div>
+    <br>
+</div>
+<!--SESSÃO 4- FALE CONOSCO-->
+<section class ="container-fluid text-center mt-0 pt-0 text-white" id="sec4" style= "background-color:rgb(93, 93, 93); border: 10px solid rgb(96, 96, 96);" >
+    <h2 class="text-center pt-2 text-white" style="border-bottom: 2px solid white; font-family: Magic;">Fale conosco</h2>
+
+    <form class=" bg m-auto pt-4 ">
+
+        <div class="row">
+        <span class="input-group-text col-12 d-inline-block centered-text form-label" style="">Primeiro e último nome</span>
+        <input type="text" aria-label="First name" class="form-control col-6 " placeholder="Primeiro nome" id="meuInput" oninput="validarInput(event)" id="firstNameInput">
+        <input type="text" aria-label="Last name" class="form-control col-6"  placeholder="Último nome" id="meuInput" oninput="validarInput(event)" id="lastNameInput">
+    </div>
+
+    <div class="mb-3 m-auto" id="sec4">
+        <label for="exampleFormControlInput1" class="form-label pt-2">Email address</label>
+        <input type="email" class="form-control"  id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+
+    <div class=>
+        <label class="form-label col-12" for="typePhone">Número de Telefone</label>
+        <input type="tel" id="typePhone" class="form-control" placeholder="(99) 99999-9999" />
+    </div>
+
+    <div class="mb-3 m-auto">
+        <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">Enviar</button>
+    </div>
+</form>
+
+<!--facebook-->
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+</svg>
+
+<!--instagram-->
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+</svg>
+    <h2>Redes Sociais</h2>
+    <i class="bi bi-facebook"></i>
+    <i class="bi bi-instagram"></i>
+
+    <h3>Endereço</h3>
+    <p>Rua das pizzas</p>
+</section>
+
+</body>
+</html>
