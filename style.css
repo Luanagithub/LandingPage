@@ -81,11 +81,20 @@ form{
     background-size: cover;
 }
 
-@media (min-width: 1327px) {
+@media (min-width: 1350px) {
     html{
         border-top: 4vw solid white;
-        border-left: 24vw solid white;
-        border-right: 24vw solid white;
+        border-left: 12vw solid white;
+        border-right: 12vw solid white;
         border-bottom: 12vw solid white;
     }
+}
+
+    @media (min-width:2000px) {
+        html{
+            border-top: 4vw solid white;
+            border-left: 24vw solid white;
+            border-right: 24vw solid white;
+            border-bottom: 12vw solid white;
+        }
 }
